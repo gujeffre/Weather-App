@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="15.0" prefWidth="400.0" prefHeight="300.0" 
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://github.com/fxml" 
+      fx:controller="com.weatherapp.WeatherController"
+      style="-fx-background-color: #f4f6f9; -fx-font-family: 'Segoe UI', Helvetica;">
+    
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <Label text="Secure Weather Dashboard" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    
+    <HBox spacing="10.0" alignment="CENTER">
+        <TextField fx:id="cityInputField" promptText="Enter City Name..." prefWidth="240.0"/>
+        <Button fx:id="searchButton" text="Search" onAction="#handleSearchAction" style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+    </HBox>
+
+    <ProgressIndicator fx:id="loadingSpinner" visible="false" managed="false" prefWidth="30.0" prefHeight="30.0"/>
+
+    <VBox fx:id="resultContainer" spacing="8.0" alignment="CENTER_LEFT" visible="false" 
+          style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 8;">
+        <Label fx:id="cityNameLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <Label fx:id="tempLabel" style="-fx-font-size: 14px;"/>
+        <Label fx:id="conditionsLabel" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+        <Label fx:id="humidityLabel" style="-fx-font-size: 14px;"/>
+    </VBox>
+</VBox>
